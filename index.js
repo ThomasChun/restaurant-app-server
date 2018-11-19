@@ -3,7 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-
+require('dotenv').config();
 const { PORT, CLIENT_ORIGIN } = require('./config');
 const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
@@ -22,6 +22,12 @@ app.use(
     origin: CLIENT_ORIGIN
   })
 );
+
+// Create a static webserver
+app.use(express.static('public'));
+
+// Parse request body
+app.use(express.json());
 
 app.use('/api/restaurants', restaurantRouter);
 
