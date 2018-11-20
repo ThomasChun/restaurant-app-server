@@ -28,4 +28,14 @@ router.post('/', (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.delete('/:id', (req, res, next) => {
+  const { id } = req.params;
+  
+  Restaurant.findOneAndRemove({ _id: id })
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch(err => next(err));
+});
+
 module.exports = router;
