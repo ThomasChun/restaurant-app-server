@@ -11,6 +11,20 @@ router.get('/', (req, res, next) => {
     .catch(err => next(err));
 });
 
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params;
+  
+  Restaurant.findOne({ _id: id })
+    .then(result => {
+      if (result) {
+        res.json(result);
+      } else {
+        next();
+      }
+    })
+    .catch(err => next(err));
+});
+
 router.post('/', (req, res, next) => {
   const { name } = req.body;
   const newRestaurant = { name };
