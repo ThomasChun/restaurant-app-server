@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   name: {type: String},
+  collectionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Collection' }
 });
 
 schema.set('timestamps', true);

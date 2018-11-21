@@ -12,8 +12,8 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  const { name } = req.body;
-  const newRestaurant = { name };
+  const { name, collectionId } = req.body;
+  const newRestaurant = { name, collectionId };
 
   if (!name) {
     const err = new Error('Missing `name` in request body');
