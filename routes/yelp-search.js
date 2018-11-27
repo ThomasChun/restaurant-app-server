@@ -14,11 +14,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  const { name } = req.body;
+  const { name, location } = req.body;
 
   client.search({
     term: name,
-    location: 'los angeles, ca'
+    location: location,
   })
     .then(response => {
       const restaurantsSearchResult = response.jsonBody.businesses;
