@@ -9,6 +9,7 @@ const { dbConnect } = require('./db-mongoose');
 // const {dbConnect} = require('./db-knex');
 const restaurantRouter = require('./routes/restaurants');
 const collectionRouter = require('./routes/collections');
+const yelpSearchRouter = require('./routes/yelp-search');
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use(express.json());
 
 app.use('/api/restaurants', restaurantRouter);
 app.use('/api/collections', collectionRouter);
+app.use('/api/yelp', yelpSearchRouter);
 
 function runServer(port = PORT) {
   const server = app

@@ -4,16 +4,10 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   name: {type: String},
-  yelpId: String,
-  address: String,
-  rating: Number,
-  price: String,
-  image: String,
-  url: String,
-  categories: Array,
-  reviewCount: Number,
-  transactions: Array,
-  phone: String,
+  yelpId: {type: String},
+  rating: {type: Number},
+  price: {type: String},
+  address: {type: String},
   collectionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Collection' }
 });
 
@@ -28,4 +22,4 @@ schema.set('toJSON', {
   }
 });
 
-module.exports = mongoose.model('Restaurant', schema);
+module.exports = mongoose.model('YelpRestaurant', schema);
