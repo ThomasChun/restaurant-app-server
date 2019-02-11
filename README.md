@@ -109,11 +109,11 @@ The restaurant app is integrated with the Yelp Fusion API. For personal use, you
 
 All requests and responses are in JSON format.
 
-**Collections**
+### Collections
 
-GET request to endpoint /api/collections will retrieve all collections.
+**GET** request to endpoint /api/collections will retrieve all collections.
 
-POST request to endpoint /api/collections is for users to create a new Collection. It accepts the following request body:
+**POST** request to endpoint /api/collections is for users to create a new Collection. It accepts the following request body:
 
 ```
 {
@@ -121,13 +121,13 @@ POST request to endpoint /api/collections is for users to create a new Collectio
 }
 ```
 
-DELETE request to endpoint /api/collections/:id will delete selected restaurant.
+**DELETE** request to endpoint /api/collections/:id will delete selected restaurant.
 
-**Restaurants**
+### Restaurants
 
-GET request to endpoint /api/restaurants will retrieve all restaurants.
+**GET** request to endpoint /api/restaurants will retrieve all restaurants.
 
-POST request to endpoint /api/restaurants is for users to add a new restaurant to collection.
+**POST** request to endpoint /api/restaurants is for users to add a new restaurant to collection.
 
 ```
 {
@@ -146,4 +146,4 @@ POST request to endpoint /api/restaurants is for users to add a new restaurant t
 }
 ```
 
-DELETE request to endpoint /api/restaurants/:id will delete selected restaurant.
+**DELETE** request to endpoint /api/restaurants/:id will delete selected restaurant.
