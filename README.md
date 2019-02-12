@@ -147,3 +147,36 @@ All requests and responses are in JSON format.
 ```
 
 **DELETE** request to endpoint /api/restaurants/:id will delete selected restaurant.
+
+### Yelp Search
+
+**GET** request to endpoint /api/yelp will retrieve all yelp search restaurants.
+
+**POST** request to endpoint /api/yelp is for users to search Yelp! Fusion API.
+
+```
+{
+    term: name,
+    location: location,
+}
+```
+
+returns the following info from Yelp! Fusion API to be displayed for user.
+
+```
+{
+    name: restaurant.name,
+    id: restaurant.id,
+    rating: restaurant.rating,
+    price: restaurant.price,
+    address: `${restaurant.location.address1}, ${restaurant.location.city}, ${restaurant.location.state} ${restaurant.location.zip_code}`,
+    image: restaurant.image_url,
+    url: restaurant.url,
+    categories: restaurant.categories,
+    reviewCount: restaurant.review_count,
+    transactions: restaurant.transactions,
+    phone: restaurant.display_phone,
+}
+```
+
+**DELETE** request to endpoint /api/yelp will delete yelp restaurant search.
